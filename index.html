@@ -6,22 +6,263 @@
     <title>Portfolio - Belajar_C</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Animasi Fade-in */
+       
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
+        } 
 
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Animasi Transisi Halus */
+     
         * {
             scroll-behavior: smooth;
         }
+
+       
+@keyframes slideLogos {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-33.33%); }
+    50% { transform: translateX(-66.66%); }
+    75% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+
+
+section#projects {
+    background-color: #1f2937;
+}
+
+.project-item img {
+    border-radius: 0.5rem; 
+    transition: transform 0.3s ease-in-out; 
+}
+.project-item img:hover {
+    transform: scale(1.05); 
+}
+
+.project-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-item h4 {
+    font-weight: 700; 
+    color: #fff; 
+}
+
+.project-item p {
+    color: #9ca3af; 
+    line-height: 1.6; 
+}
+
+.project-item a {
+    color: #3b82f6; 
+    transition: color 0.3s ease-in-out;
+}
+
+.project-item a:hover {
+    color: #2563eb; 
+}
+
+.container {
+    max-width: 1200px;
+}
+
+
+
+.carousel-container {
+    overflow: hidden;
+    white-space: nowrap; 
+    position: relative;
+}
+
+
+.carousel-track {
+    display: flex;
+    animation: scrollCarousel 20s linear infinite;
+}
+
+
+.carousel-item {
+    flex: 0 0 auto; 
+    margin: 0 180px; 
+}
+
+.carousel-image {
+    width: 180px; 
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.carousel-image:hover {
+    transform: scale(1.1); 
+}
+
+
+@keyframes scrollCarousel {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+#contact {
+    background: linear-gradient(135deg, #1f2937, #111827); 
+}
+
+#contact h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#contact a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+#contact i {
+    transition: transform 0.3s ease;
+}
+
+#contact a:hover i {
+    transform: scale(1.2);
+}
+
+#contact .flex a {
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #1f2937; 
+    transition: all 0.3s ease;
+}
+
+#contact .flex a:hover {
+    background-color: #3b82f6; 
+    color: #ffffff;
+}
+
+
+
+footer {
+    background: linear-gradient(135deg, #1f2937, #111827);
+}
+
+footer i {
+    transition: transform 0.3s ease-in-out; 
+}
+
+footer a:hover i {
+    transform: scale(1.2); 
+}
+
+footer .flex a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #1f2937;
+}
+
+footer .flex a:hover {
+    background-color: #3b82f6; 
+    color: #ffffff;
+}
+
+section.bg-gray-900 {
+    background: linear-gradient(135deg, #1f2937 50%, #111827 100%); 
+}
+
+
+h2 span {
+    font-style: italic;
+    background: linear-gradient(to right, #3b82f6, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Link/Button Styling */
+a {
+    transition: all 0.3s ease-in-out;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.5px;
+}
+
+a:hover {
+    box-shadow: 0px 10px 20px rgba(59, 130, 246, 0.4); 
+    transform: translateY(-3px);
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.bg-gif {
+    background: linear-gradient(120deg, #0f172a, #1e293b, #334155, #64748b);
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%; 
+    }
+    50% {
+        background-position: 100% 50%; 
+    }
+    100% {
+        background-position: 0% 50%; 
+    }
+}
+
+#hamburger {
+    display: block;
+}
+
+
+#nav-menu {
+    background-color: #1a202c;
+    color: white;
+    border-radius: 0.5rem;
+}
+
+
+@media (min-width: 1024px) {
+    #hamburger {
+        display: none; 
+    }
+
+    #nav-menu {
+        display: flex !important; 
+        background: none;
+        color: inherit;
+    }
+}
+
+
+
     </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
@@ -29,158 +270,246 @@
     <!-- Navbar -->
     <header class="bg-gray-800 py-6">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-3xl font-bold">Belajar_C</h1>
-            <nav>
-                <ul class="flex space-x-8 text-lg font-medium">
-                    <li><a href="#about" class="hover:text-blue-400">About</a></li>
-                    <li><a href="#topics" class="hover:text-blue-400">Topics</a></li>
-                    <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
-                    <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+            <h1 class="text-3xl font-bold">Code_Id</h1>
+            <nav class="relative">
+                <!-- Hamburger Button -->
+                <button id="hamburger" class="lg:hidden p-2 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            
+                <!-- Navigation Menu -->
+                <ul id="nav-menu" class="hidden lg:flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-8 text-lg font-medium absolute lg:static bg-black lg:bg-transparent top-14 right-0 p-4 lg:p-0 w-48 lg:w-auto shadow-lg lg:shadow-none">
+                    <li><a href="#about" class="hover:text-blue-400 block">About</a></li>
+                    <li><a href="#topics" class="hover:text-blue-400 block">Topics</a></li>
+                    <li><a href="#projects" class="hover:text-blue-400 block">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-blue-400 block">Contact</a></li>
                 </ul>
             </nav>
+            
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gray-900 py-20 fade-in">
+    <section class="bg-gif py-20 fade-in">
         <div class="container mx-auto text-center">
-            <h2 class="text-5xl font-extrabold text-white mb-4">Selamat Datang Di Belajar_C</h2>
-            <p class="text-gray-400 text-lg mb-8">Code Redefined. Berbagi ilmu seputar dunia IT dan pengembangan.</p>
-            <a href="#about" class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-medium">Pelajari Lebih Lanjut</a>
+            <h2 class="text-5xl font-bold text-white mb-4 leading-tight tracking-wide">
+                Selamat Datang di <span class="text-blue-500">Code_id</span>
+            </h2>
+            <p class="text-gray-400 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+                <span class="text-blue-400">Code Redefined</span>. Platform belajar untuk berbagi pengetahuan tentang dunia IT, pengembangan software, dan inovasi teknologi.
+            </p>
+            <a href="#about" class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-10 py-4 rounded-lg text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 ease-in-out">
+                Pelajari Lebih Lanjut
+            </a>
         </div>
     </section>
+    
+
 
     <!-- About Section -->
     <section id="about" class="py-16 bg-gray-800 fade-in">
         <div class="container mx-auto flex flex-col md:flex-row items-center">
             <div class="w-full md:w-1/2 text-center md:text-left">
                 <h3 class="text-4xl font-bold text-white mb-6">Kenalan Yuk</h3>
-                <p class="text-gray-400 text-lg">Halo, nama saya adalah <span class="text-blue-400 font-semibold">Alegrarsio Gifta Lesmana</span>, saya adalah seorang developer dan juga content creator, saya juga memiliki channel YouTube dengan nama Belajar_C. Saya suka berbagi ilmu dan informasi seputar bidang IT 😁, tetap semangat dan salam coding 💻👍.</p>
+                <p class="text-gray-400 text-lg">Halo, nama saya adalah <span class="text-blue-400 font-semibold">Alegrarsio Gifta Lesmana</span>, saya adalah seorang developer dan juga content creator, saya juga memiliki channel YouTube dengan nama Belajar_C. Saya suka berbagi ilmu dan informasi seputar bidang IT 😁, di sini saya juga akan manjadi mentor kalian tetap, semangat dan salam coding 💻👍.</p>
             </div>
             <div class="w-full md:w-1/2 text-center">
-                <img src="DSC01778-01.jpeg" alt="Alegrarsio" class="mx-auto rounded-full shadow-lg" style="max-width: 300px; height: auto;">
+                <img src="DSC01778-01.jpeg" alt="Alegrarsio" class="mx-auto rounded-full shadow-lg" style="max-width: 200px; height: auto;">
             </div>
         </div>
     </section>
+<!-- Topics Section -->
+<section id="topics" class="py-16 bg-gradient-to-b from-gray-900 to-black fade-in">
+    <div class="container mx-auto">
+        <h3 class="text-4xl font-bold text-center mb-12 text-white tracking-wide">
+            Kita akan belajar tentang
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-xl text-center transition-transform transform hover:scale-105 hover:shadow-2xl">
+                <div class="mb-6">
+                    <img src="cs.gif" alt="Coding GIF" class="w-30 h-30 mx-auto mb-4">
+                </div>
+                <h4 class="text-2xl font-semibold text-white mb-4">Coding</h4>
+                <p class="text-gray-400 leading-relaxed">
+                    Belajar coding bareng saya yuk, seperti Java, Python, C, C++, dan lainnya.
+                </p>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-xl text-center transition-transform transform hover:scale-105 hover:shadow-2xl">
+                <div class="mb-6">
+                    <img src="data.gif" alt="Database GIF" class="w-30 h-30 mx-auto mb-4">
+                </div>
+                <h4 class="text-2xl font-semibold text-white mb-4">Databases</h4>
+                <p class="text-gray-400 leading-relaxed">
+                    Belajar database seperti SQL dan MongoDB.
+                </p>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-xl text-center transition-transform transform hover:scale-105 hover:shadow-2xl">
+                <div class="mb-6">
+                    <img src="algosgif.gif" alt="Algorithms GIF" class="w-30 h-30 mx-auto mb-4">
+                </div>
+                <h4 class="text-2xl font-semibold text-white mb-4">Algorithms</h4>
+                <p class="text-gray-400 leading-relaxed">
+                    Belajar algoritma dan selesaikan masalah dengan teknik-teknik canggih.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- Topics Section -->
-    <section id="topics" class="py-16 fade-in">
-        <div class="container mx-auto">
-            <h3 class="text-4xl font-bold text-center mb-12 text-white">What You'll Learn</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-                    <h4 class="text-xl font-bold text-white mb-4">Coding</h4>
-                    <p class="text-gray-400">Belajar coding bareng saya yuk, seperti Java, Python, C, C++, dan lainnya.</p>
+<!-- Videos Section -->
+<section id="videos" class="py-16 bg-gradient-to-b from-gray-900 to-black fade-in">
+    <div class="container mx-auto">
+        <h3 class="text-4xl font-extrabold text-center mb-12 text-white tracking-wide">
+            Videos from Belajar_C
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Video Card 1 -->
+            <div class="relative bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl">
+                <iframe class="w-full h-56 rounded-t-lg" src="https://www.youtube.com/embed/m4cukX2tAp8?si=D1Yi5N6heVvd7QQj" 
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <div class="p-6 text-center">
+                    <h4 class="text-2xl font-semibold text-white mb-2">JDBC Intro</h4>
+                    <p class="text-gray-400 leading-relaxed">
+                        Pelajari bagaimana cara menghubungkan database dengan menggunakan Java dan bantuan driver JDBC.
+                    </p>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-                    <h4 class="text-xl font-bold text-white mb-4">Databases</h4>
-                    <p class="text-gray-400">Belajar database seperti SQL dan MongoDB.</p>
+            </div>
+            <!-- Video Card 2 -->
+            <div class="relative bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl">
+                <iframe class="w-full h-56 rounded-t-lg" src="https://www.youtube.com/embed/IcblH00GmMY?si=pPOwA85GebxOWR-z" 
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <div class="p-6 text-center">
+                    <h4 class="text-2xl font-semibold text-white mb-2">Operasi Select Di JDBC</h4>
+                    <p class="text-gray-400 leading-relaxed">
+                        Belajar cara menampilkan data di dalam JDBC.
+                    </p>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-                    <h4 class="text-xl font-bold text-white mb-4">Algorithms</h4>
-                    <p class="text-gray-400">Belajar algoritma dan selesaikan masalah dengan teknik-teknik canggih.</p>
+            </div>
+            <!-- Video Card 3 -->
+            <div class="relative bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl">
+                <iframe class="w-full h-56 rounded-t-lg" src="https://www.youtube.com/embed/JjAj9fy-Vu0?si=OPHt-x302360AE9B" 
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <div class="p-6 text-center">
+                    <h4 class="text-2xl font-semibold text-white mb-2">Dasar CRUD di MongoDB</h4>
+                    <p class="text-gray-400 leading-relaxed">
+                        Belajar dan pahami konsep dasar CRUD di MongoDB.
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Videos Section -->
-    <section id="videos" class="py-16 bg-gray-900 fade-in">
-        <div class="container mx-auto">
-            <h3 class="text-4xl font-bold text-center mb-12 text-white">Videos from Belajar_C</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-                    <iframe class="w-full rounded-lg" src="https://www.youtube.com/embed/m4cukX2tAp8?si=D1Yi5N6heVvd7QQj" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    <h4 class="text-xl font-bold mt-4 text-center text-white">JDBC Intro</h4>
-                    <p class="text-gray-400 text-center">Pelajari bagaimana cara menghubungkan database dengan menggunakan Java dan bantuan driver JDBC.</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-                    <iframe class="w-full rounded-lg" src="https://www.youtube.com/embed/IcblH00GmMY?si=pPOwA85GebxOWR-z" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    <h4 class="text-xl font-bold mt-4 text-center text-white">Operasi Select Di JDBC</h4>
-                    <p class="text-gray-400 text-center">Belajar cara menampilkan data di dalam JDBC.</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-                    <iframe class="w-full rounded-lg" src="https://www.youtube.com/embed/JjAj9fy-Vu0?si=OPHt-x302360AE9B" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    <h4 class="text-xl font-bold mt-4 text-center text-white">Dasar CRUD di MongoDB</h4>
-                    <p class="text-gray-400 text-center">Belajar dan pahami konsep dasar CRUD di MongoDB.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-gray-800 fade-in">
-        <div class="container mx-auto">
-            <h3 class="text-4xl font-bold text-center mb-12 text-white">Proyek Saya</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center project-item">
-                    <img src="netlabs.png" alt="Netlab Logo" class="mb-4 mx-auto w-32 h-32">
-                    <h4 class="text-xl font-bold mb-4 text-white">Netlab</h4>
-                    <p class="text-gray-400">Netlab adalah aplikasi simulasi jaringan sederhana.</p>
-                    <a href="#" class="text-blue-500 hover:underline">Lihat Proyek</a>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center project-item">
-                    <img src="Dsbasics.png" alt="Proyek 2 Logo" class="mb-4 mx-auto w-32 h-32">
-                    <h4 class="text-xl font-bold mb-4 text-white">DsBasic</h4>
-                    <p class="text-gray-400">Aplikasi visualisasi algoritma dan struktur data.</p>
-                    <a href="#" class="text-blue-500 hover:underline">Lihat Proyek</a>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center project-item">
-                    <img src="wargapes.png" alt="Web Belajar C Logo" class="mb-4 mx-auto w-32 h-32">
-                    <h4 class="text-xl font-bold mb-4 text-white">Wargape</h4>
-                    <p class="text-gray-400">Adalah aplikasi penjualan barang yang dibuat untuk sistem manajemen kantin di GKI Jember.</p>
-                    <a href="#" class="text-blue-500 hover:underline">Lihat Proyek</a>
-                </div>
+    <div class="carousel-container bg-gray-800 py-16">
+        <div class="carousel-track">
+            <div class="carousel-item">
+                <img src="Java_programming_language_logo.svg.png" alt="Java Logo" class="carousel-image">
+            </div>
+            <div class="carousel-item">
+                <img src="ISO_C++_Logo.svg.png" alt="C++ Logo" class="carousel-image">
+            </div>
+            <div class="carousel-item">
+                <img src="C_Logo.png" alt="C Logo" class="carousel-image">
+            </div>
+            <div class="carousel-item">
+                <img src="python.png" alt="Python Logo" class="carousel-image">
+            </div>
+            <div class="carousel-item">
+                <img src="Unofficial_JavaScript_logo_2.svg.png" alt="JavaScript Logo" class="carousel-image">
+            </div>
+            <!-- Duplicate items for smooth looping -->
+            <div class="carousel-item">
+                <img src="Java_programming_language_logo.svg.png" alt="Java Logo" class="carousel-image">
+            </div>
+            <div class="carousel-item">
+                <img src="ISO_C++_Logo.svg.png" alt="C++ Logo" class="carousel-image">
+            </div>
+            <div class="carousel-item">
+                <img src="C_Logo.png" alt="C Logo" class="carousel-image">
+            </div>
+            <div class="carousel-item">
+                <img src="python.png" alt="Python Logo" class="carousel-image">
+            </div>
+            <div class="carousel-item">
+                <img src="Unofficial_JavaScript_logo_2.svg.png" alt="JavaScript Logo" class="carousel-image">
             </div>
         </div>
-    </section>
+    </div>
+    
+    
+    
 
-    <!-- Contact Section -->
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-gray-900 fade-in">
         <div class="container mx-auto">
-            <h3 class="text-4xl font-bold text-center mb-8 text-white">Kontak Saya</h3>
-            <form action="mailto:alegrarsio2005@gmail.com" method="POST" class="max-w-lg mx-auto">
-                <div class="mb-4">
-                    <label for="name" class="block text-white">Nama</label>
-                    <input type="text" id="name" name="name" class="w-full p-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-blue-500">
+            <h3 class="text-4xl font-bold text-center mb-12 text-white">Kontak</h3>
+            <div class="text-center">
+                <p class="text-gray-400 text-lg mb-6">Hubungi saya melalui email atau media sosial.</p>
+                <div class="mt-8">
+                    <a href="mailto:alegrarsio2005@gmail.com" class="text-lg text-blue-500 hover:underline transition duration-300">
+                        <i class="fas fa-envelope text-blue-500 mr-2"></i>alegrarsio2005@gmail.com
+                    </a>
+                    <div class="flex justify-center mt-8 space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition duration-300">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition duration-300">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition duration-300">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-white">Email</label>
-                    <input type="email" id="email" name="email" class="w-full p-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-blue-500">
-                </div>
-                <div class="mb-4">
-                    <label for="message" class="block text-white">Pesan</label>
-                    <textarea id="message" name="message" rows="4" class="w-full p-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-blue-500"></textarea>
-                </div>
-                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-medium">Kirim Pesan</button>
-            </form>
+            </div>
         </div>
     </section>
-
+    
+    
 
     <!-- Footer -->
     <footer class="bg-gray-800 py-8">
-        <div class="container mx-auto text-center text-gray-400">
-            &copy; 2024 Belajar_C. All rights reserved.
+        <div class="container mx-auto text-center">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2024 Belajar_C. Semua hak dilindungi.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-blue-500 transition duration-300">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-500 transition duration-300">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-500 transition duration-300">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
+    
 
     <script>
-        // Intersection Observer untuk Animasi Fade-in
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                } else {
-                    entry.target.classList.remove('visible');
+        // Animasi Fade-in untuk konten saat scroll
+        document.addEventListener('scroll', function() {
+            const fadeIns = document.querySelectorAll('.fade-in');
+            fadeIns.forEach(function(fadeIn) {
+                if (fadeIn.getBoundingClientRect().top < window.innerHeight - 100) {
+                    fadeIn.classList.add('visible');
                 }
             });
         });
-
-        document.querySelectorAll('.fade-in').forEach(element => {
-            observer.observe(element);
-        });
+        document.getElementById('hamburger').addEventListener('click', function () {
+        const navMenu = document.getElementById('nav-menu');
+        navMenu.classList.toggle('hidden'); // Toggle visibility of nav menu
+    });
     </script>
 </body>
 </html>
